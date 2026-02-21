@@ -1,110 +1,926 @@
----
-import Base from '../layouts/Base.astro';
----
-<Base
-  title="Revtrue"
-  description="Revenue insights, faster. Upload your data and see the truth in minutes."
-  canonical="https://revtrue.tech/"
-  ogType="website"
->
-  <div class="lp">
-    <main class="lp-main">
-      <h1 class="lp-logo fu fu1">
-        <span class="rev">Rev</span><span class="true">true</span>
-      </h1>
-      <p class="lp-tagline fu fu2">
-        Revenue insights, faster. Upload your data and see the truth in minutes.
-      </p>
-      <form action="https://app.revtrue.tech/login" method="get" class="lp-form fu fu3">
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          class="lp-input"
-        />
-        <button type="submit" class="lp-btn">Get started</button>
-      </form>
-    </main>
-  </div>
-</Base>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revtrue — See Exactly Where Your Deals Die → Stage by Stage</title>
+<meta name="description" content="Upload a spreadsheet. In under 60 seconds, see stage-by-stage where deals die, which cohorts convert, and what to fix this quarter.">
+<meta name="keywords" content="pipeline analytics, revenue operations, stage-by-stage conversion, cohort analysis, sales pipeline diagnosis, B2B SaaS, CRM analytics">
+<meta name="author" content="Revtrue">
+<meta name="robots" content="index, follow">
 
-<style>
-  .lp {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
-  }
-  .lp-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    text-align: center;
-  }
-  .lp-logo {
-    font-family: var(--sans);
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-  }
-  .lp-logo .rev {
-    font-style: italic;
-    color: var(--orange);
-  }
-  .lp-logo .true {
-    color: var(--black);
-  }
-  .lp-tagline {
-    max-width: 448px;
-    font-family: var(--sans);
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--muted);
-  }
-  .lp-form {
-    display: flex;
-    width: 100%;
-    max-width: 384px;
-    gap: 12px;
-  }
-  .lp-input {
-    flex: 1;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--white);
-    padding: 10px 12px;
-    font-family: var(--sans);
-    font-size: 16px;
-    color: var(--black);
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .lp-input::placeholder {
-    color: var(--dim);
-  }
-  .lp-input:focus {
-    border-color: var(--orange);
-    box-shadow: 0 0 0 1px var(--orange);
-  }
-  .lp-btn {
-    white-space: nowrap;
-    border-radius: 8px;
-    background: var(--orange);
-    padding: 10px 24px;
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--white);
-    transition: background 0.2s;
-  }
-  .lp-btn:hover {
-    background: #d8571f;
-  }
-  @media (max-width: 480px) {
-    .lp-form {
-      flex-direction: column;
+<!-- Open Graph -->
+<meta property="og:title" content="Revtrue — See Exactly Where Your Deals Die → Stage by Stage">
+<meta property="og:description" content="Upload a spreadsheet. Before your coffee gets cold, know exactly which stage kills your deals, which cohorts convert, and what to fix this quarter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://revtrue.tech">
+<meta property="og:image" content="https://revtrue.tech/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Revtrue">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Revtrue — Pipeline Analytics That Actually Diagnose">
+<meta name="twitter:description" content="Upload a spreadsheet. In under 60 seconds, see stage-by-stage where deals die.">
+<meta name="twitter:image" content="https://revtrue.tech/og-image.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://revtrue.tech">
+
+<!-- Favicon placeholder -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23E86C3A'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='system-ui'>R</text></svg>">
+
+<!-- Structured Data -->
+<script type="application/ld+json" is:inline>
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Revtrue","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Pipeline analytics that diagnose where deals die, stage by stage. Upload a CRM export, get your diagnosis in under 60 seconds.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free pipeline diagnosis"}}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com" is:inline></script>
+<script is:inline>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream:     { DEFAULT:'#FAF8F5', dark:'#F5F2EF', deep:'#EDEAE6' },
+        bdr:       '#E8E4DF',
+        tx:        '#1A1A1A',
+        tx2:       '#6B6560',
+        mt:        '#9B9590',
+        ac:        { DEFAULT:'#E86C3A', hover:'#D4582E', light:'rgba(232,108,58,0.08)' },
+        gn:        { DEFAULT:'#2D9D4E', light:'#4CAF78', bg:'rgba(45,157,78,0.08)' },
+        rd:        '#D94F3D',
+        pk:        '#E8837C',
+      },
+      fontFamily: { sans:['"Plus Jakarta Sans"','system-ui','sans-serif'] },
     }
   }
+}
+</script>
+
+<style is:inline>
+  /* === Grain overlay === */
+  body::after { content:''; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:.012;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* === Scroll reveal === */
+  .rv { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+  .rv.vis { opacity:1; transform:translateY(0); }
+  .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
+
+  /* === Demo steps === */
+  .demo-step { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; opacity:0; transition:opacity .4s ease; pointer-events:none; }
+  .demo-step.active { opacity:1; pointer-events:auto; }
+  .demo-step.step-top { justify-content:flex-start; padding-top:52px; }
+  @media(min-width:768px){ .demo-step.step-top { padding-top:56px; } }
+  .funnel-seg { height:100%; transition:width 1s ease; width:0; }
+  .funnel-bar { height:28px; border-radius:4px; overflow:hidden; display:flex; background:#EDEAE6; }
+  .chart-line { fill:none; stroke-width:2; stroke-linecap:round; stroke-dasharray:1000; stroke-dashoffset:1000; transition:stroke-dashoffset 2s ease; }
+  .chart-line.draw { stroke-dashoffset:0; }
+  .dtab { color:#9B9590; cursor:default; }
+  .dtab.dtab-on { background:#E86C3A; color:#fff; border-radius:6px; }
+  .kp-anim { opacity:0; transform:scale(.92); transition:all .5s cubic-bezier(.22,1,.36,1); }
+  .kp-anim.vis2 { opacity:1; transform:scale(1); }
+  .fn-row { opacity:0; transform:translateX(-20px); transition:all .6s cubic-bezier(.22,1,.36,1); }
+  .fn-row.vis2 { opacity:1; transform:translateX(0); }
+  .co-row { opacity:0; transform:translateY(6px); transition:all .4s ease; }
+  .co-row.vis2 { opacity:1; transform:translateY(0); }
+
+  /* === FAQ accordion === */
+  .faq-body { max-height:0; overflow:hidden; transition:max-height .35s ease,padding .35s ease; padding:0 24px; }
+  .faq-item.open .faq-body { max-height:220px; padding:0 24px 20px; }
+  .faq-item.open .faq-chev { transform:rotate(180deg); }
+  .faq-chev { transition:transform .3s ease; }
+
+  /* === Email field focus === */
+  .em-input:focus { outline:none; box-shadow:0 0 0 3px rgba(232,108,58,.15); border-color:#E86C3A; }
+
+  /* === Hover lift === */
+  .hlift { transition:transform .2s ease, box-shadow .2s ease; }
+  .hlift:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.06); }
+
+  /* === Sticky mobile CTA === */
+  .sticky-mob { transform:translateY(100%); transition:transform .3s ease; }
+  .sticky-mob.show { transform:translateY(0); }
+
+  /* === Dot styles === */
+  .bdot { width:10px; height:10px; border-radius:50%; }
+
+  /* === Smooth scrollbar === */
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#E8E4DF; border-radius:3px; }
 </style>
+</head>
+
+<body class="font-sans text-tx antialiased bg-cream overflow-x-hidden leading-relaxed">
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-cream/92 backdrop-blur-xl border-b border-bdr">
+  <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+    <a href="#" class="text-xl font-extrabold tracking-tight select-none">
+      <span class="text-ac italic">Rev</span><span class="text-tx">true</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[13px] font-semibold text-tx2">
+      <a href="#demo" class="hover:text-ac transition-colors">How It Works</a>
+      <a href="#faq" class="hover:text-ac transition-colors">FAQ</a>
+    </nav>
+    <a onclick="window.location.href=(window.location.hostname==='localhost'?'http://localhost:3000':'https://app.revtrue.tech')+'/login';return false" href="https://app.revtrue.tech/login" class="bg-ac hover:bg-ac-hover text-white text-[13px] font-bold px-5 py-2 rounded-lg transition-colors shadow-sm cursor-pointer">
+      Get Free Demo →
+    </a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="pt-28 pb-14 md:pt-40 md:pb-24 px-5">
+  <div class="max-w-[720px] mx-auto text-center">
+
+    <div class="rv inline-flex items-center gap-2 text-[11px] font-bold tracking-[.08em] uppercase text-tx2 border border-bdr rounded-full px-4 py-1.5 mb-7 bg-cream">
+      <span class="w-1.5 h-1.5 rounded-full bg-ac inline-block animate-pulse"></span>
+      Built by a Head of Sales, for Heads of Sales
+    </div>
+
+    <h1 class="rv d1 text-[clamp(30px,5.8vw,54px)] font-extrabold leading-[1.06] tracking-[-0.03em] mb-5">
+      See Exactly Where Your<br>Deals Die →
+      <span class="text-ac"> Stage by Stage</span>
+    </h1>
+
+    <p class="rv d2 text-[clamp(15px,1.7vw,18px)] text-tx2 max-w-[520px] mx-auto mb-9 leading-[1.65]">
+      Upload a spreadsheet. Before your coffee gets cold, you'll know exactly which stage kills your deals, which cohorts convert, and what to fix this quarter.
+    </p>
+
+    <!-- Hero Email Capture -->
+    <form id="hero-form" class="rv d3 max-w-md mx-auto" onsubmit="return handleSubmit(event,'hero')">
+      <div class="flex gap-2">
+        <input type="email" id="hero-email" required placeholder="Your work email"
+          class="em-input flex-1 px-4 py-3 rounded-xl border border-bdr bg-white text-sm font-medium placeholder:text-mt transition-all">
+        <button type="submit" id="hero-btn"
+          class="bg-ac hover:bg-ac-hover text-white font-bold px-6 py-3 rounded-xl text-sm transition-all whitespace-nowrap shadow-[0_4px_16px_rgba(232,108,58,.25)] hover:shadow-[0_8px_24px_rgba(232,108,58,.35)] active:scale-[.97]">
+          Get Free Diagnosis →
+        </button>
+      </div>
+      <p id="hero-msg" class="text-xs mt-2 min-h-[18px] transition-all"></p>
+    </form>
+
+    <a href="#demo" class="rv d4 inline-flex items-center gap-1.5 text-[13px] text-tx2 hover:text-ac transition-colors font-medium mt-3">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21"/></svg>
+      See the product in under a minute
+    </a>
+
+    <div class="rv d5 mt-10">
+      <p class="text-[10px] font-semibold tracking-[.1em] uppercase text-mt">Trusted by revenue teams running real pipelines</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ PAIN POINTS ═══════════════════ -->
+<section class="py-16 md:py-24 px-5">
+  <div class="max-w-5xl mx-auto">
+    <p class="rv text-[11px] font-bold tracking-[.1em] uppercase text-ac text-center mb-3">Sound familiar?</p>
+    <h2 class="rv d1 text-[clamp(22px,3.5vw,36px)] font-extrabold tracking-tight text-center mb-12 leading-tight">
+      Every Monday forecast meeting ends the same way
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-12">
+      <div class="rv d1 bg-white border border-bdr rounded-2xl p-7 relative overflow-hidden hlift">
+        <div class="absolute top-0 inset-x-0 h-[3px] bg-rd"></div>
+        <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-rd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3 class="font-bold text-[15px] mb-2 tracking-tight">"Why aren't we closing more?"</h3>
+        <p class="text-[13px] text-tx2 leading-relaxed">The VP asks. The room goes quiet. Everyone has theories. Nobody has the exact stage where deals are dying, backed by real conversion data.</p>
+      </div>
+
+      <div class="rv d2 bg-white border border-bdr rounded-2xl p-7 relative overflow-hidden hlift">
+        <div class="absolute top-0 inset-x-0 h-[3px] bg-ac"></div>
+        <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-ac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="font-bold text-[15px] mb-2 tracking-tight">Your CRM reports lie to you</h3>
+        <p class="text-[13px] text-tx2 leading-relaxed">HubSpot shows a simple funnel. No cohorts. No real stage-by-stage conversion. No way to compare this January vs last January in two clicks.</p>
+      </div>
+
+      <div class="rv d3 bg-white border border-bdr rounded-2xl p-7 relative overflow-hidden hlift">
+        <div class="absolute top-0 inset-x-0 h-[3px] bg-gn"></div>
+        <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-gn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="font-bold text-[15px] mb-2 tracking-tight">Friday afternoon, exporting to Excel</h3>
+        <p class="text-[13px] text-tx2 leading-relaxed">You spend hours building a pipeline view in a spreadsheet. By Monday, the numbers are stale and the conclusion is still vague.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ DEMO ═══════════════════ -->
+<section class="py-16 md:py-24 px-5" id="demo">
+  <div class="max-w-4xl mx-auto">
+    <p class="rv text-[11px] font-bold tracking-[.1em] uppercase text-ac text-center mb-3">See It Work</p>
+    <h2 class="rv d1 text-[clamp(22px,3.5vw,36px)] font-extrabold tracking-tight text-center mb-2 leading-tight">
+      Upload. Wait under 60 seconds. Read your entire pipeline.
+    </h2>
+    <p class="rv d2 text-center text-[15px] text-tx2 mb-10">Drop a CSV from HubSpot or Salesforce. Revtrue does the rest.</p>
+
+    <div class="rv d3 bg-white border border-bdr rounded-2xl overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,.06)]" id="demo-browser">
+      <!-- Chrome bar -->
+      <div class="bg-cream-dark px-4 py-2.5 flex items-center gap-2 border-b border-bdr">
+        <div class="bdot bg-pk"></div><div class="bdot bg-yellow-300"></div><div class="bdot bg-gn-light"></div>
+        <div class="flex-1 bg-white rounded-md px-3 py-1 text-[11px] text-mt font-medium">app.revtrue.tech</div>
+      </div>
+
+      <!-- Body -->
+      <div class="relative bg-cream" id="demo-body" style="min-height:480px">
+
+        <!-- Product tab bar (appears from step 2+) -->
+        <div id="dtabs" class="absolute top-0 inset-x-0 z-10 px-3 md:px-5 pt-2.5 pb-2 flex items-center gap-0.5 md:gap-1 border-b border-bdr bg-cream overflow-x-auto opacity-0 transition-opacity duration-300" style="display:none">
+          <span class="dtab text-[9px] md:text-[10px] font-semibold px-2 md:px-3 py-1.5 whitespace-nowrap" data-t="summary">Summary</span>
+          <span class="dtab text-[9px] md:text-[10px] font-semibold px-2 md:px-3 py-1.5 whitespace-nowrap" data-t="cohort">Cohort</span>
+          <span class="dtab text-[9px] md:text-[10px] font-semibold px-2 md:px-3 py-1.5 whitespace-nowrap" data-t="segmentation">Segmentation</span>
+          <span class="dtab text-[9px] md:text-[10px] font-semibold px-2 md:px-3 py-1.5 whitespace-nowrap" data-t="timeseries">Time Series</span>
+          <span class="dtab text-[9px] md:text-[10px] font-semibold px-2 md:px-3 py-1.5 whitespace-nowrap" data-t="stagejourney">Stage Journey <span class="text-ac">✦</span></span>
+        </div>
+
+        <!-- Step 0: Upload -->
+        <div class="demo-step active" data-step="0">
+          <div id="uz" class="border-2 border-dashed border-bdr rounded-2xl p-8 md:p-10 text-center w-full max-w-sm transition-all duration-300">
+            <div class="text-4xl mb-3 opacity-40">📄</div>
+            <p class="text-sm text-mt">Drag your CRM export here</p>
+            <div id="uf" class="inline-flex items-center gap-2 bg-white border border-bdr rounded-lg px-4 py-2.5 text-sm font-semibold mt-4 opacity-0 translate-y-2 transition-all duration-500">
+              <span class="text-gn">📊</span> hubspot-deals-2025.csv
+            </div>
+            <div class="flex gap-2 mt-3 justify-center flex-wrap">
+              <span id="t1" class="text-gn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-gn-bg opacity-0 transition-all duration-300">6 columns mapped</span>
+              <span id="t2" class="text-gn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-gn-bg opacity-0 transition-all duration-300">1,247 deals found</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1: Processing -->
+        <div class="demo-step" data-step="1">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-ac/10 mb-4">
+              <svg class="w-5 h-5 text-ac animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v4m0 12v4m-7.07-3.93l2.83-2.83m8.48-8.48l2.83-2.83M2 12h4m12 0h4m-3.93 7.07l-2.83-2.83M6.34 6.34L3.51 3.51"/></svg>
+            </div>
+            <p class="text-base font-bold mb-5">Analyzing your pipeline...</p>
+            <div class="text-left max-w-[300px] mx-auto space-y-2.5" id="pl">
+              <div class="pi flex items-center gap-2.5 text-sm text-mt opacity-0 -translate-x-2 transition-all duration-400"><svg class="w-4 h-4 text-gn shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mapping columns to fields</div>
+              <div class="pi flex items-center gap-2.5 text-sm text-mt opacity-0 -translate-x-2 transition-all duration-400"><svg class="w-4 h-4 text-gn shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Classifying Won / Lost / Open</div>
+              <div class="pi flex items-center gap-2.5 text-sm text-mt opacity-0 -translate-x-2 transition-all duration-400"><svg class="w-4 h-4 text-gn shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Computing stage conversions</div>
+              <div class="pi flex items-center gap-2.5 text-sm text-mt opacity-0 -translate-x-2 transition-all duration-400"><svg class="w-4 h-4 text-gn shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Generating 5 reports</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Dashboard Summary -->
+        <div class="demo-step step-top" data-step="2">
+          <div class="w-full max-w-lg px-1 md:px-3" id="kg">
+            <!-- Row 1: 4 KPIs -->
+            <div class="grid grid-cols-4 gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="1247" data-delay="0">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Total Deals</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight tabular-nums">0</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="156" data-delay="1">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Won</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight text-gn tabular-nums">0</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="943" data-delay="2">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Lost</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight text-rd tabular-nums">0</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 row-span-2" data-v="14" data-s="%" data-delay="3">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Win Rate</div>
+                <div class="kv text-xl md:text-2xl font-extrabold tracking-tight text-ac tabular-nums">0</div>
+                <div class="h-2 rounded-full mt-2 overflow-hidden flex">
+                  <div id="wr-g" class="h-full bg-gn rounded-l-full transition-all duration-1000 ease-out" style="width:0"></div>
+                  <div id="wr-r" class="h-full bg-rd rounded-r-full transition-all duration-1000 ease-out" style="width:0"></div>
+                </div>
+                <div class="flex justify-between mt-1">
+                  <span class="text-[7px] font-semibold text-gn">156 won</span>
+                  <span class="text-[7px] font-semibold text-rd">943 lost</span>
+                </div>
+              </div>
+            </div>
+            <!-- Row 2: 3 KPIs -->
+            <div class="grid grid-cols-4 gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="1200" data-p="$" data-s="k" data-delay="4">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Revenue Won</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight text-gn tabular-nums">0</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="8" data-p="$" data-s="k" data-delay="5">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Avg. Ticket</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight tabular-nums">0</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-lg p-2 md:p-3 text-center" data-v="148" data-delay="6">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-mt mb-0.5">Open</div>
+                <div class="kv text-lg md:text-xl font-extrabold tracking-tight tabular-nums">0</div>
+              </div>
+              <div class="hidden md:block"></div>
+            </div>
+            <!-- Row 3: Cycle + Trend -->
+            <div class="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-1.5 md:gap-2">
+              <div class="kp-anim bg-ac rounded-xl p-3 text-center" data-v="47" data-delay="7">
+                <div class="text-[8px] font-semibold tracking-[.06em] uppercase text-white/70 mb-0.5">Median Cycle</div>
+                <div class="kv text-2xl md:text-3xl font-extrabold text-white tabular-nums">0</div>
+                <div class="text-[10px] font-bold text-white/80">days</div>
+              </div>
+              <div class="kp-anim bg-white border border-bdr rounded-xl p-2.5 md:p-3" data-delay="8">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-bold text-tx">Won deals / month</span>
+                  <div class="flex gap-0.5">
+                    <span class="text-[8px] font-semibold px-1.5 py-0.5 rounded bg-white border border-bdr text-mt">Count</span>
+                    <span class="text-[8px] font-semibold px-1.5 py-0.5 rounded bg-ac text-white">Revenue</span>
+                  </div>
+                </div>
+                <svg class="w-full" viewBox="0 0 300 52" id="sparkline">
+                  <line x1="0" y1="48" x2="300" y2="48" stroke="#E8E4DF" stroke-width=".5"/>
+                  <line x1="0" y1="32" x2="300" y2="32" stroke="#E8E4DF" stroke-width=".3" stroke-dasharray="3"/>
+                  <line x1="0" y1="16" x2="300" y2="16" stroke="#E8E4DF" stroke-width=".3" stroke-dasharray="3"/>
+                  <path class="chart-line" d="M5,46 L25,44 L50,42 L75,40 L100,38 L125,36 L150,37 L175,32 L200,28 L225,22 L250,16 L275,10 L295,6" stroke="#E86C3A" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Stage Journey -->
+        <div class="demo-step step-top" data-step="3">
+          <div class="w-full max-w-lg px-1 md:px-3" id="fn">
+            <!-- Alert banner -->
+            <div id="fn-alert" class="border-l-4 border-rd bg-red-50 rounded-r-lg p-2.5 md:p-3 mb-3 flex items-start gap-2 opacity-0 transition-all duration-500">
+              <div class="w-7 h-7 rounded-lg bg-rd/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-rd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-[11px] md:text-xs font-bold leading-tight">Bottleneck detected: <span class="text-rd">Proposal</span></div>
+                <div class="text-[10px] text-tx2 leading-snug mt-0.5">Only <strong class="text-rd">47.1%</strong> of deals advance past this stage — <strong>384</strong> deals lost here.</div>
+              </div>
+              <div class="text-right shrink-0 pl-2">
+                <div class="text-[7px] uppercase tracking-wider text-mt font-semibold">Overall Conv</div>
+                <div class="text-lg md:text-xl font-extrabold text-gn leading-none">12.5%</div>
+              </div>
+            </div>
+
+            <!-- Funnel header -->
+            <div id="fn-head" class="flex items-center justify-between mb-2 px-0.5 opacity-0 transition-opacity duration-300">
+              <span class="text-[8px] uppercase tracking-[.08em] font-semibold text-mt">Conversion Funnel</span>
+              <div class="flex gap-1.5">
+                <span class="text-[9px] font-semibold px-2 py-0.5 rounded-md bg-white border border-bdr text-tx2">1,247 deals</span>
+                <span class="text-[9px] font-semibold px-2 py-0.5 rounded-md bg-gn-bg text-gn">156 won</span>
+                <span class="text-[9px] font-semibold px-2 py-0.5 rounded-md bg-red-50 text-rd">943 lost</span>
+              </div>
+            </div>
+
+            <!-- Funnel rows -->
+            <div class="space-y-1.5">
+              <div class="fn-row" data-adv="74.7" data-lost="20.5" data-open="4.8">
+                <div class="flex items-center gap-2">
+                  <div class="w-[80px] md:w-[90px] text-right shrink-0">
+                    <div class="text-[10px] md:text-[11px] font-semibold text-tx truncate">Qualification</div>
+                    <div class="text-[8px] text-mt">2d avg</div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="funnel-bar"><div class="funnel-seg bg-[#6B7280]"></div><div class="funnel-seg bg-pk"></div><div class="funnel-seg bg-[#FDE8E8]"></div></div>
+                  </div>
+                  <div class="w-14 text-right shrink-0">
+                    <div class="text-[11px] font-bold">1,247</div>
+                    <div class="text-[10px] font-bold text-gn">74.7%</div>
+                  </div>
+                </div>
+                <div class="flex ml-[88px] md:ml-[98px] gap-2 mt-0.5"><span class="text-[8px] text-mt">932 advanced</span><span class="text-[8px] text-pk font-medium">267 lost</span><span class="text-[8px] text-mt">48 open</span></div>
+              </div>
+
+              <div class="fn-row" data-adv="65.9" data-lost="25.1" data-open="9">
+                <div class="flex items-center gap-2">
+                  <div class="w-[80px] md:w-[90px] text-right shrink-0">
+                    <div class="text-[10px] md:text-[11px] font-semibold text-tx truncate">Discovery</div>
+                    <div class="text-[8px] text-mt">5d avg</div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="funnel-bar"><div class="funnel-seg bg-[#6B7280]"></div><div class="funnel-seg bg-pk"></div><div class="funnel-seg bg-[#FDE8E8]"></div></div>
+                  </div>
+                  <div class="w-14 text-right shrink-0">
+                    <div class="text-[11px] font-bold">932</div>
+                    <div class="text-[10px] font-bold text-gn">65.9%</div>
+                  </div>
+                </div>
+                <div class="flex ml-[88px] md:ml-[98px] gap-2 mt-0.5"><span class="text-[8px] text-mt">614 advanced</span><span class="text-[8px] text-pk font-medium">234 lost</span><span class="text-[8px] text-mt">84 open</span></div>
+              </div>
+
+              <div class="fn-row" data-adv="47.1" data-lost="46.7" data-open="6.2">
+                <div class="flex items-center gap-2">
+                  <div class="w-[80px] md:w-[90px] text-right shrink-0">
+                    <div class="text-[10px] md:text-[11px] font-semibold text-rd truncate">Proposal</div>
+                    <div class="text-[8px] text-mt">8d avg</div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="funnel-bar"><div class="funnel-seg bg-[#6B7280]"></div><div class="funnel-seg bg-pk"></div><div class="funnel-seg bg-[#FDE8E8]"></div></div>
+                  </div>
+                  <div class="w-14 text-right shrink-0">
+                    <div class="text-[11px] font-bold">614</div>
+                    <div class="text-[10px] font-bold text-rd">47.1%</div>
+                  </div>
+                </div>
+                <div class="flex ml-[88px] md:ml-[98px] gap-2 mt-0.5"><span class="text-[8px] text-mt">289 advanced</span><span class="text-[8px] text-rd font-semibold">384 lost</span><span class="text-[8px] text-mt">38 open</span></div>
+              </div>
+
+              <!-- Won bar -->
+              <div class="fn-row" data-adv="100" data-lost="0" data-open="0">
+                <div class="flex items-center gap-2">
+                  <div class="w-[80px] md:w-[90px] text-right shrink-0">
+                    <div class="text-[10px] md:text-[11px] font-bold text-tx uppercase">Won</div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="h-[28px] rounded overflow-hidden flex bg-cream-dark"><div class="funnel-seg bg-gn"></div></div>
+                  </div>
+                  <div class="w-14 text-right shrink-0">
+                    <div class="text-[11px] font-bold text-gn">156</div>
+                    <div class="text-[10px] font-bold text-gn">$1.2M</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div id="fn-legend" class="flex gap-4 mt-3 justify-center opacity-0 transition-opacity duration-500">
+              <div class="flex items-center gap-1.5 text-[9px] text-tx2 font-medium"><div class="w-2.5 h-2.5 rounded-sm bg-[#6B7280]"></div>Advanced</div>
+              <div class="flex items-center gap-1.5 text-[9px] text-tx2 font-medium"><div class="w-2.5 h-2.5 rounded-sm bg-pk"></div>Lost</div>
+              <div class="flex items-center gap-1.5 text-[9px] text-tx2 font-medium"><div class="w-2.5 h-2.5 rounded-sm bg-[#FDE8E8]"></div>Open</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Cohort Comparison -->
+        <div class="demo-step step-top" data-step="4">
+          <div class="w-full max-w-lg px-1 md:px-3" id="ct">
+            <div class="text-[8px] uppercase tracking-[.08em] font-semibold text-mt mb-2">Comparison by Vintage</div>
+            <div class="overflow-x-auto -mx-1">
+              <table class="w-full text-[10px] md:text-[11px]">
+                <thead>
+                  <tr class="border-b border-bdr">
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1.5 text-left">Vintage</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-center">Deals</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-center" colspan="3">Stages (Conv%)</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-center">Won</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-center">Lost</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-center">Conv%</th>
+                    <th class="text-[8px] font-semibold tracking-[.05em] uppercase text-mt py-1.5 px-1 text-right">Revenue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="co-row border-b border-bdr/50">
+                    <td class="py-2 px-1.5 font-semibold">Jan/26</td>
+                    <td class="py-2 px-1 text-center">49</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="59%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="90%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="67%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">2</td>
+                    <td class="py-2 px-1 text-center text-rd">18</td>
+                    <td class="py-2 px-1 text-center font-bold text-ac">10%</td>
+                    <td class="py-2 px-1 text-right font-medium">$15k</td>
+                  </tr>
+                  <tr class="co-row border-b border-bdr/50">
+                    <td class="py-2 px-1.5 font-semibold">Jan/25</td>
+                    <td class="py-2 px-1 text-center">41</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="61%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="36%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="56%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">4</td>
+                    <td class="py-2 px-1 text-center text-rd">36</td>
+                    <td class="py-2 px-1 text-center font-bold text-ac">10%</td>
+                    <td class="py-2 px-1 text-right font-medium">$57k</td>
+                  </tr>
+                  <tr class="co-row border-b border-bdr/50">
+                    <td class="py-2 px-1.5 font-semibold">Feb/25</td>
+                    <td class="py-2 px-1 text-center">36</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="83%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="67%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="42%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">8</td>
+                    <td class="py-2 px-1 text-center text-rd">27</td>
+                    <td class="py-2 px-1 text-center font-bold text-gn">22.9%</td>
+                    <td class="py-2 px-1 text-right font-medium">$59k</td>
+                  </tr>
+                  <tr class="co-row border-b border-bdr/50">
+                    <td class="py-2 px-1.5 font-semibold">Feb/24</td>
+                    <td class="py-2 px-1 text-center">25</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="68%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-rd transition-all duration-700" style="width:0" data-w="35%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-rd transition-all duration-700" style="width:0" data-w="17%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">1</td>
+                    <td class="py-2 px-1 text-center text-rd">24</td>
+                    <td class="py-2 px-1 text-center font-bold text-rd">4%</td>
+                    <td class="py-2 px-1 text-right font-medium">$15k</td>
+                  </tr>
+                  <tr class="co-row border-b border-bdr/50">
+                    <td class="py-2 px-1.5 font-semibold">Mar/25</td>
+                    <td class="py-2 px-1 text-center">28</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="71%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="75%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="29%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">4</td>
+                    <td class="py-2 px-1 text-center text-rd">23</td>
+                    <td class="py-2 px-1 text-center font-bold text-ac">14.8%</td>
+                    <td class="py-2 px-1 text-right font-medium">$39k</td>
+                  </tr>
+                  <tr class="co-row">
+                    <td class="py-2 px-1.5 font-semibold">Mar/24</td>
+                    <td class="py-2 px-1 text-center">25</td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-gn transition-all duration-700" style="width:0" data-w="76%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="53%"></div></div></td>
+                    <td class="py-2 px-0.5"><div class="h-3 w-12 rounded-sm overflow-hidden bg-cream-dark"><div class="co-bar h-full bg-ac transition-all duration-700" style="width:0" data-w="40%"></div></div></td>
+                    <td class="py-2 px-1 text-center font-medium text-gn">4</td>
+                    <td class="py-2 px-1 text-center text-rd">21</td>
+                    <td class="py-2 px-1 text-center font-bold text-ac">16%</td>
+                    <td class="py-2 px-1 text-right font-medium">$53k</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Time Series -->
+        <div class="demo-step step-top" data-step="5">
+          <div class="w-full max-w-lg px-1 md:px-3">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] md:text-sm font-bold">Deals per month</span>
+              <div class="flex gap-0.5"><span class="text-[9px] font-semibold px-2.5 py-1 rounded-md bg-white border border-bdr text-mt">Monthly</span><span class="text-[9px] font-semibold px-2.5 py-1 rounded-md bg-ac text-white">Cumulative</span></div>
+            </div>
+            <svg class="w-full" viewBox="0 0 520 210">
+              <!-- Grid -->
+              <line x1="40" y1="10" x2="40" y2="185" stroke="#E8E4DF"/>
+              <line x1="40" y1="185" x2="510" y2="185" stroke="#E8E4DF"/>
+              <line x1="40" y1="145" x2="510" y2="145" stroke="#E8E4DF" stroke-width=".4" stroke-dasharray="4"/>
+              <line x1="40" y1="105" x2="510" y2="105" stroke="#E8E4DF" stroke-width=".4" stroke-dasharray="4"/>
+              <line x1="40" y1="65" x2="510" y2="65" stroke="#E8E4DF" stroke-width=".4" stroke-dasharray="4"/>
+              <line x1="40" y1="25" x2="510" y2="25" stroke="#E8E4DF" stroke-width=".4" stroke-dasharray="4"/>
+              <!-- Y labels -->
+              <text x="35" y="188" font-size="8" fill="#9B9590" text-anchor="end" font-family="Plus Jakarta Sans">0</text>
+              <text x="35" y="148" font-size="8" fill="#9B9590" text-anchor="end" font-family="Plus Jakarta Sans">300</text>
+              <text x="35" y="108" font-size="8" fill="#9B9590" text-anchor="end" font-family="Plus Jakarta Sans">600</text>
+              <text x="35" y="68" font-size="8" fill="#9B9590" text-anchor="end" font-family="Plus Jakarta Sans">900</text>
+              <text x="35" y="28" font-size="8" fill="#9B9590" text-anchor="end" font-family="Plus Jakarta Sans">1.2k</text>
+              <!-- X labels -->
+              <text x="65" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Jan</text>
+              <text x="135" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Apr</text>
+              <text x="215" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Jul</text>
+              <text x="300" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Oct</text>
+              <text x="380" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Jan</text>
+              <text x="460" y="200" font-size="8" fill="#9B9590" text-anchor="middle" font-family="Plus Jakarta Sans">Apr</text>
+              <!-- Right Y axis for Conv% -->
+              <text x="515" y="188" font-size="8" fill="#9B9590" text-anchor="start" font-family="Plus Jakarta Sans">0</text>
+              <text x="515" y="108" font-size="8" fill="#9B9590" text-anchor="start" font-family="Plus Jakarta Sans">50</text>
+              <text x="515" y="28" font-size="8" fill="#9B9590" text-anchor="start" font-family="Plus Jakarta Sans">100</text>
+              <!-- Lines (cumulative view - climbing curves) -->
+              <path class="chart-line" d="M50,178 C80,176 100,172 130,168 S180,158 215,148 S260,135 300,120 S340,108 380,90 S420,68 460,45 S490,30 505,22" stroke="#94A3B8" stroke-width="2.5"/>
+              <path class="chart-line" d="M50,180 C80,178 100,175 130,170 S180,163 215,155 S260,145 300,132 S340,122 380,108 S420,90 460,70 S490,56 505,48" stroke="#E8837C" stroke-width="2"/>
+              <path class="chart-line" d="M50,182 C80,181 100,180 130,178 S180,176 215,174 S260,172 300,168 S340,163 380,155 S420,144 460,130 S490,120 505,112" stroke="#4CAF78" stroke-width="2"/>
+              <path class="chart-line" d="M50,118 C80,115 100,118 130,112 S180,108 215,105 S260,100 300,95 S340,92 380,88 S420,82 460,75 S490,68 505,62" stroke="#E86C3A" stroke-width="1.5" stroke-dasharray="6,4"/>
+            </svg>
+            <div class="flex gap-3 md:gap-5 justify-center mt-2 flex-wrap">
+              <div class="flex items-center gap-1.5 text-[9px] md:text-[10px] text-tx2 font-medium"><div class="w-3 h-[3px] rounded-full bg-gray-400"></div>New</div>
+              <div class="flex items-center gap-1.5 text-[9px] md:text-[10px] text-tx2 font-medium"><div class="w-3 h-[3px] rounded-full bg-pk"></div>Lost</div>
+              <div class="flex items-center gap-1.5 text-[9px] md:text-[10px] text-tx2 font-medium"><div class="w-3 h-[3px] rounded-full bg-gn-light"></div>Won</div>
+              <div class="flex items-center gap-1.5 text-[9px] md:text-[10px] text-tx2 font-medium"><div class="w-3 h-0 border-t-[3px] border-dashed border-ac"></div>Conv %</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Nav -->
+      <div class="flex items-center justify-center gap-4 py-3 border-t border-bdr bg-white">
+        <button id="dr" class="text-[11px] font-semibold text-tx2 border border-bdr rounded-md px-3 py-1 hover:border-ac hover:text-ac transition-colors">↻ Replay</button>
+        <div class="flex gap-1.5 items-center" id="dd"></div>
+        <span class="text-[10px] font-semibold tracking-[.04em] uppercase text-mt w-24 text-center" id="dl">Upload</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+<section class="py-16 md:py-24 px-5">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Metric -->
+    <div class="rv bg-gradient-to-br from-ac to-ac-hover rounded-3xl p-12 md:p-16 text-center text-white mb-10 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[.04]" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"></div>
+      <div class="relative">
+        <div class="text-[clamp(52px,10vw,84px)] font-extrabold tracking-tighter leading-none">&lt;60s</div>
+        <p class="text-[15px] opacity-90 max-w-md mx-auto mt-3 leading-relaxed">from CRM export to full pipeline diagnosis. What used to take a Friday afternoon in Excel now takes under a minute.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="rv d1 bg-white border border-bdr rounded-2xl p-7 hlift">
+        <div class="text-sm mb-3 tracking-wider text-amber-400">★★★★★</div>
+        <p class="text-[14px] text-tx leading-[1.65] italic mb-5">"We found a 22% drop-off between SQO and Negotiation that we'd been blind to for two quarters. Revtrue showed it in our first upload."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-ac-light flex items-center justify-center text-xs font-bold text-ac">JR</div>
+          <div><div class="text-sm font-bold">James R.</div><div class="text-[11px] text-mt">VP Revenue Ops · SaaS, Series C</div></div>
+        </div>
+      </div>
+      <div class="rv d2 bg-white border border-bdr rounded-2xl p-7 hlift">
+        <div class="text-sm mb-3 tracking-wider text-amber-400">★★★★★</div>
+        <p class="text-[14px] text-tx leading-[1.65] italic mb-5">"I used to spend Friday afternoons building pipeline decks. Now I open Revtrue before my Monday forecast call and I'm done in 10 minutes."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-ac-light flex items-center justify-center text-xs font-bold text-ac">MK</div>
+          <div><div class="text-sm font-bold">Maria K.</div><div class="text-[11px] text-mt">CRO · B2B Marketplace</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section class="py-16 md:py-24 px-5 bg-white border-y border-bdr" id="faq">
+  <div class="max-w-3xl mx-auto">
+    <p class="rv text-[11px] font-bold tracking-[.1em] uppercase text-ac text-center mb-3">FAQ</p>
+    <h2 class="rv d1 text-[clamp(22px,3.5vw,34px)] font-extrabold tracking-tight text-center mb-10 leading-tight">Common questions</h2>
+
+    <div class="rv d2 space-y-3" id="faq-list">
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">What data do I need to upload?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">A simple CSV with 4 columns: deal name, creation date, current stage, and close date. That's what any CRM (HubSpot, Salesforce, Pipedrive) exports in two clicks. No sensitive data needed — just pipeline stages and dates.</div>
+      </div>
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">Do I need to connect my CRM via OAuth or API?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">No. Zero integration. You export a spreadsheet from your CRM and upload it. No OAuth, no API keys, no IT team involvement, no multi-day setup. It takes under 60 seconds from export to diagnosis.</div>
+      </div>
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">What reports does Revtrue generate?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">Five reports: Dashboard Summary (KPIs), Stage Journey (funnel with bottleneck diagnosis), Cohort Analysis (compare periods side-by-side), Time Series (trends over time), and Segmentation (break down by any field). All generated automatically from one upload.</div>
+      </div>
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">How is this different from my CRM's built-in reports?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">CRM reports show a simple funnel. Revtrue shows real stage-by-stage conversion per cohort, compares periods with one click, calculates median cycle time per stage, and identifies your biggest bottleneck automatically. It delivers a diagnosis, not a dashboard you still need to interpret.</div>
+      </div>
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">Is my data secure?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">Yes. Your data is processed securely and never shared. We only need pipeline metadata (stages and dates) — not customer names, emails, or deal values if you prefer not to include them. You control exactly what you upload.</div>
+      </div>
+      <div class="faq-item border border-bdr rounded-xl bg-cream overflow-hidden">
+        <button class="w-full flex items-center justify-between px-6 py-4 text-left" onclick="togFaq(this)">
+          <span class="text-[14px] font-bold pr-4">Is it free?</span>
+          <svg class="faq-chev w-4 h-4 text-mt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-body text-[13px] text-tx2 leading-relaxed">Free to start. Your first pipeline diagnosis is completely free — no credit card, no commitment. Upload your data, get your reports, and decide if it's worth it based on the insights you see.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ FINAL CTA ═══════════════════ -->
+<section class="py-20 md:py-28 px-5" id="cta-final">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="rv text-[clamp(24px,4.5vw,42px)] font-extrabold tracking-tight leading-[1.1] mb-4">
+      Stop Exporting to Excel.<br>Start Knowing in Under a Minute.
+    </h2>
+    <p class="rv d1 text-[15px] text-tx2 mb-8">Upload your CRM data. Get the diagnosis your Monday meeting needs.</p>
+
+    <form id="cta-form" class="rv d2 max-w-md mx-auto mb-6" onsubmit="return handleSubmit(event,'cta')">
+      <div class="flex gap-2">
+        <input type="email" id="cta-email" required placeholder="Your work email"
+          class="em-input flex-1 px-4 py-3.5 rounded-xl border border-bdr bg-white text-sm font-medium placeholder:text-mt transition-all">
+        <button type="submit" id="cta-btn"
+          class="bg-ac hover:bg-ac-hover text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all whitespace-nowrap shadow-[0_4px_16px_rgba(232,108,58,.25)] hover:shadow-[0_8px_24px_rgba(232,108,58,.35)] active:scale-[.97]">
+          Get Free Diagnosis →
+        </button>
+      </div>
+      <p id="cta-msg" class="text-xs mt-2 min-h-[18px]"></p>
+    </form>
+
+    <div class="rv d3 flex flex-wrap items-center justify-center gap-5">
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-gn"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Free to start</span>
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-gn"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>No CRM integration needed</span>
+      <span class="flex items-center gap-1.5 text-xs font-semibold text-gn"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>First report in under 60 seconds</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="border-t border-bdr py-10 px-5">
+  <div class="max-w-5xl mx-auto text-center">
+    <a href="#" class="text-lg font-extrabold tracking-tight inline-block"><span class="text-ac italic">Rev</span><span class="text-tx">true</span></a>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="#" class="text-xs text-mt hover:text-ac transition-colors">Privacy Policy</a>
+      <a href="#" class="text-xs text-mt hover:text-ac transition-colors">Terms</a>
+      <a href="mailto:hello@revtrue.tech" class="text-xs text-mt hover:text-ac transition-colors">Contact</a>
+    </div>
+    <p class="text-[11px] text-mt mt-3">© 2025 Revtrue. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════ STICKY MOBILE CTA ═══════════════════ -->
+<div class="sticky-mob fixed bottom-0 inset-x-0 z-40 bg-cream/95 backdrop-blur-xl border-t border-bdr p-3 md:hidden" id="sm">
+  <a onclick="window.location.href=(window.location.hostname==='localhost'?'http://localhost:3000':'https://app.revtrue.tech')+'/login';return false" href="https://app.revtrue.tech/login" class="flex items-center justify-center bg-ac hover:bg-ac-hover text-white font-bold py-3 rounded-xl text-sm transition-colors w-full active:scale-[.97]">Get Your Free Pipeline Diagnosis →</a>
+</div>
+
+
+<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+<script is:inline>
+/* --- Scroll Reveal --- */
+var ro = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}})}, {threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el)});
+
+/* --- Sticky Mobile CTA --- */
+new IntersectionObserver(function(es){document.getElementById('sm').classList.toggle('show',!es[0].isIntersecting)},{threshold:0}).observe(document.querySelector('section'));
+
+/* --- FAQ --- */
+function togFaq(btn){var i=btn.closest('.faq-item'),o=i.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(x){x.classList.remove('open')});if(!o)i.classList.add('open')}
+
+/* --- Email Capture -> Redirect to App Login --- */
+var APP_LOGIN=window.location.hostname==='localhost'?'http://localhost:3000/login':'https://app.revtrue.tech/login';
+function handleSubmit(e,id){
+  e.preventDefault();
+  var inp=document.getElementById(id+'-email'), msg=document.getElementById(id+'-msg');
+  var v=inp.value.trim();
+  msg.textContent=''; msg.className='text-xs mt-2 min-h-[18px]';
+  // format check
+  if(!v||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+    msg.textContent='Please enter a valid email address.';
+    msg.classList.add('text-rd','font-medium');
+    inp.style.borderColor='#D94F3D';
+    setTimeout(function(){inp.style.borderColor='';},2000);
+    return false;
+  }
+  // Redirect to app with email prefilled
+  window.location.href=APP_LOGIN+'?email='+encodeURIComponent(v);
+  return false;
+}
+
+/* --- Demo Engine --- */
+var STP=[
+  {n:'Upload',d:2800,tab:null},
+  {n:'Processing',d:2400,tab:null},
+  {n:'Dashboard',d:3200,tab:'summary'},
+  {n:'Stage Journey',d:3600,tab:'stagejourney'},
+  {n:'Cohort Comparison',d:3000,tab:'cohort'},
+  {n:'Time Series',d:3000,tab:'timeseries'}
+];
+var cs=0,dt=null,ds=false;
+var dl=document.getElementById('dl'),dd=document.getElementById('dd'),dtabs=document.getElementById('dtabs');
+
+STP.forEach(function(_,i){var d=document.createElement('div');d.className='h-2 rounded-full cursor-pointer transition-all duration-200 '+(i===0?'w-6 bg-ac':'w-2 bg-bdr');d.onclick=function(){go(i)};dd.appendChild(d)});
+
+function showTabs(tabKey){
+  if(!tabKey){dtabs.style.display='none';dtabs.style.opacity='0';return;}
+  dtabs.style.display='flex';
+  requestAnimationFrame(function(){dtabs.style.opacity='1'});
+  document.querySelectorAll('.dtab').forEach(function(t){
+    t.classList.toggle('dtab-on',t.dataset.t===tabKey);
+  });
+}
+
+function go(i){
+  clearTimeout(dt); cs=i;
+  document.querySelectorAll('.demo-step').forEach(function(s){s.classList.remove('active')});
+  var dots=dd.children;
+  for(var x=0;x<dots.length;x++){dots[x].className='h-2 rounded-full cursor-pointer transition-all duration-200 '+(x===i?'w-6 bg-ac':'w-2 bg-bdr')}
+  document.querySelector('.demo-step[data-step="'+i+'"]').classList.add('active');
+  dl.textContent=STP[i].n;
+  showTabs(STP[i].tab);
+  anim(i);
+  if(i<STP.length-1) dt=setTimeout(function(){go(i+1)},STP[i].d);
+}
+
+function anim(i){
+  /* Step 0: Upload */
+  if(i===0){
+    var z=document.getElementById('uz'),f=document.getElementById('uf'),a=document.getElementById('t1'),b=document.getElementById('t2');
+    z.style.borderColor='';z.style.background='';f.style.opacity='0';f.style.transform='translateY(8px)';a.style.opacity='0';b.style.opacity='0';
+    setTimeout(function(){z.style.borderColor='#E86C3A';z.style.background='rgba(232,108,58,.03)'},300);
+    setTimeout(function(){f.style.opacity='1';f.style.transform='translateY(0)'},800);
+    setTimeout(function(){a.style.opacity='1'},1400);
+    setTimeout(function(){b.style.opacity='1'},1800);
+  }
+  /* Step 1: Processing */
+  if(i===1){
+    var ps=document.querySelectorAll('#pl .pi');
+    ps.forEach(function(p){p.style.opacity='0';p.style.transform='translateX(-8px)';p.style.color=''});
+    ps.forEach(function(p,x){setTimeout(function(){p.style.opacity='1';p.style.transform='translateX(0)';p.style.color='#1A1A1A'},400+x*450)});
+  }
+  /* Step 2: Dashboard */
+  if(i===2){
+    var ks=document.querySelectorAll('#kg .kp-anim');
+    ks.forEach(function(k){k.classList.remove('vis2');var kv=k.querySelector('.kv');if(kv)kv.textContent='0'});
+    document.getElementById('wr-g').style.width='0';
+    document.getElementById('wr-r').style.width='0';
+    // Reset sparkline
+    var sp=document.querySelector('#sparkline .chart-line');
+    if(sp){sp.classList.remove('draw');sp.style.strokeDashoffset='1000';}
+
+    ks.forEach(function(k,x){
+      var delay=parseInt(k.dataset.delay||0)*120;
+      setTimeout(function(){
+        k.classList.add('vis2');
+        var kv=k.querySelector('.kv');
+        if(kv && k.dataset.v){
+          var v=+k.dataset.v, s=k.dataset.s||'', p=k.dataset.p||'';
+          cntUp(kv,v,p,s,900);
+        }
+      },200+delay);
+    });
+    setTimeout(function(){
+      document.getElementById('wr-g').style.width='14.2%';
+      document.getElementById('wr-r').style.width='85.8%';
+    },600);
+    // Sparkline draw
+    setTimeout(function(){
+      if(sp){sp.style.removeProperty('stroke-dashoffset');sp.classList.add('draw');}
+    },1200);
+  }
+  /* Step 3: Stage Journey */
+  if(i===3){
+    var alert=document.getElementById('fn-alert');
+    var head=document.getElementById('fn-head');
+    var legend=document.getElementById('fn-legend');
+    var rows=document.querySelectorAll('#fn .fn-row');
+    alert.style.opacity='0'; head.style.opacity='0'; legend.style.opacity='0';
+    rows.forEach(function(r){r.classList.remove('vis2');r.querySelectorAll('.funnel-seg').forEach(function(s){s.style.width='0'})});
+
+    setTimeout(function(){alert.style.opacity='1'},200);
+    setTimeout(function(){head.style.opacity='1'},500);
+
+    rows.forEach(function(r,x){
+      setTimeout(function(){
+        r.classList.add('vis2');
+        var segs=r.querySelectorAll('.funnel-seg');
+        if(r.dataset.adv!==undefined){
+          var a=parseFloat(r.dataset.adv),l=parseFloat(r.dataset.lost),o=parseFloat(r.dataset.open);
+          if(segs[0])segs[0].style.width=a+'%';
+          if(segs[1])segs[1].style.width=l+'%';
+          if(segs[2])segs[2].style.width=o+'%';
+        }
+      },700+x*400);
+    });
+    setTimeout(function(){legend.style.opacity='1'},700+rows.length*400+200);
+  }
+  /* Step 4: Cohort */
+  if(i===4){
+    var rows=document.querySelectorAll('#ct .co-row');
+    rows.forEach(function(r){r.classList.remove('vis2');r.querySelectorAll('.co-bar').forEach(function(b){b.style.width='0'})});
+    rows.forEach(function(r,x){
+      setTimeout(function(){
+        r.classList.add('vis2');
+        r.querySelectorAll('.co-bar').forEach(function(b){b.style.width=b.dataset.w});
+      },200+x*180);
+    });
+  }
+  /* Step 5: Time Series */
+  if(i===5){
+    var ls=document.querySelectorAll('.demo-step[data-step="5"] .chart-line');
+    ls.forEach(function(l){l.classList.remove('draw');l.style.strokeDashoffset='1000'});
+    setTimeout(function(){ls.forEach(function(l,x){setTimeout(function(){l.style.removeProperty('stroke-dashoffset');l.classList.add('draw')},x*250)})},300);
+  }
+}
+
+function cntUp(el,t,p,s,dur){
+  var st=performance.now();
+  (function tick(now){
+    var pr=Math.min((now-st)/dur,1);
+    var ease=1-Math.pow(1-pr,3);
+    el.textContent=p+Math.round(t*ease).toLocaleString()+s;
+    if(pr<1)requestAnimationFrame(tick);
+  })(st);
+}
+
+/* Auto-start */
+var db=document.getElementById('demo-browser');
+new IntersectionObserver(function(es){if(es[0].isIntersecting&&!ds){ds=true;setTimeout(function(){go(0)},300)}},{threshold:.25}).observe(db);
+document.getElementById('dr').onclick=function(){ds=true;go(0)};
+</script>
+</body>
+</html>
